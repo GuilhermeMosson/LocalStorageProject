@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(188,67,249);
+    background: linear-gradient(90deg, rgba(188,67,249,1) 0%, rgba(150,89,207,1) 28%, rgba(105,11,198,1) 63%, rgba(51,0,255,1) 100%);
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap_login{
+    position: relative;
+}
+
+.form_div{
+    width: 500px;
+    height: 500px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 5px double pink;
+    background-color: rgb(250, 212, 255);
+}
+
+.img_style{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+input{
+    color: #fff;
+    background-color: rgb(116, 3, 97);
+}
+
+input:placeholder{
+    color: #fff;
+}
+
+input:focus{
+    color: #fff;
+    background-color: blueviolet;
+}
+
+.key{
+    opacity: 0.8;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+}
