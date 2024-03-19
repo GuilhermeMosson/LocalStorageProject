@@ -19,7 +19,7 @@ function login(){
             id: Math.floor(Math.random() * 100000)
         }
         localStorage.setItem('usuario', JSON.stringify(user));
-        window.location.href= '../Loja';
+        window.location.href= '../Loja/index.html';
     }else{
         document.getElementById('error_id').style.display='flex';
     }
