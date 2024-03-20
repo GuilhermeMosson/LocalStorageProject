@@ -9,3 +9,24 @@ body{
     overflow-x: hidden;
     padding: 20px;
 }
+
+.wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 5%; 
+}
+
+.idPerfil{
+    display: flex;
+    gap: 5px;
+}
+
+
+@media(width >= 900px){
+
+}
