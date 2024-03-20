@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function (){
             card.className = 'card'  
             card.style.width = '18rem'
             card.style.marginRight = '10px'
+            card.style.marginBottom = '2vh'
 
             const image = document.createElement('img')
             image.src = produtos.imagem
@@ -53,4 +54,14 @@ document.addEventListener('DOMContentLoaded', function (){
         });
 
     }).catch((error) => console.error('Erro ao carrgar o arquivo JSON', error))
+
+    $('#produtos-container').on('click', ".btn-adicionar-ao-carrinho", function() {
+        const indexDoProduto = $(this).data('indice');
+        const produtoSelecionado = produtos[indexDoProduto];
+
+        let carrinho = JSON.parte(localStorage.getItem('carrinho')) || [];
+        carrinho.push(produtoSelecionado);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        alert('PRODUTO ADICIONADO AO CARRINHO');
+    })
 })
