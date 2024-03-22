@@ -1,8 +1,8 @@
 let produtos
 
 window.onload = function () {
-    var user = JSON.parse(localStorage.getItem('usuario'));
-    console.log(user);
+    var storedUser = localStorage.getItem("usuario")
+    var user = JSON.parse(storedUser)
 
     document.getElementById('user').textContent = user.name
     document.getElementById('perfil').textContent =  `${user.name} - Registro de login - ${user.dataEntrada}`
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function (){
         const indexDoProduto = $(this).data('indice');
         const produtoSelecionado = produtos[indexDoProduto];
 
-        let carrinho = JSON.parte(localStorage.getItem('carrinho')) || [];
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
         carrinho.push(produtoSelecionado);
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
         alert('PRODUTO ADICIONADO AO CARRINHO');
