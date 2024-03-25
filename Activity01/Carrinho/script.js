@@ -32,3 +32,40 @@ $(document).ready(function () {
     }
     exibirCarrinho();
 })
+
+function gerarDocumentoWord(){
+    const listaElement = document.getElementById('lista')
+    const totalElement = document.getElementById('total')
+
+    const listaClone = listaElement.cloneNode(true);
+
+    $(listaClone).find('button').remove();
+    const listaHtml = listaClone.innerHTML;
+    const totalHtml = totalElement.innerHTML;
+
+    const conteudoHmtl = `
+        <html>
+            <head>
+                <meta charset="UTF-8"/>
+            </head>
+            <body>
+                <h1>Pedido confirmado</h1>
+                <h3>Agradecemos sua preferência</h3>
+                <br>
+                ${listaHtml}
+                <br>
+                ${totalHtml}
+            </body>
+        </html>
+    `;
+
+    const blob = new Blob([conteudoHmtl], {type: 'application/msword'});
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'carrinho.doc';
+    link.click();
+    document.getElementById('pedido').style.display = 'block';
+
+}
+
+const successClose = () => document.getElementById('pedido').style.display = 'none';
